@@ -1,0 +1,27 @@
+<div class="wrapper wrapper-content news-view" style="height: 100%; padding:0px; ">
+
+    <div class="news-view" style="width: 100%; height: calc(100% - 100px); position: absolute; top: 60px; overflow-y: scroll; margin-left: auto; margin-right: auto; text-align: center;">
+
+        <div class="" sstyle="background-color: green;">
+            <div class="faq-item" ng-repeat="article in news track by $index" style="text-align: left; margin-bottom: 10px; ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="faq-question">{{article.title}}</div>
+                        <small>{{article.dateEnd.toLocaleString()}}</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="faq-answer" style="background-color: white;">
+                            <div class="photo" ng-if="article.photo != ''" style="width: 100%; background-color: white;">
+                                <img ng-src="{{article.photo}}" style="max-width: 100%;">
+                            </div>
+                            <p class="description" ng-bind-html="article.text | sanitize" ng-show="article.text != ''" style="margin-top: 20px;"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

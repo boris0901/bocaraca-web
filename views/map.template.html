@@ -1,0 +1,115 @@
+<div class="wrapper wrapper-content map-view" style="height: 100%; padding:0px;" id="map_div" xxng-controller="MapController">
+
+    <div ng-repeat="marker in markers" ui-map-marker="markers[$index]" ui-event="{'map-click': 'openMarkerInfo($event, marker)'}"></div>
+
+    <div ui-map-info-window="info_window" class="info-window">
+        <div class="photo">
+            <img ng-src="{{info_photo}}">
+        </div>
+        <div class="name">{{info_name}}</div>
+        <div class="address"><p><span class="bold">Address : </span>{{info_address}}</p></div>
+        <div class="detail">
+            <a class="button button-small button-calm" onclick="clickDetail()">Detail</a>
+        </div>
+    </div>
+
+    <div id="map_canvas" ui-map="pharmacyMap" ui-options="mapOptions" ui-event="{'map-idle':'idleMap()'}" class="google-map"></div>
+
+    <div id="pharmacy_left" style="width: 400px; height: calc(100% - 100px); background-color: white; position: absolute; top: 60px; overflow-y: scroll;" ng-show="showLeftPanel">
+        <div class="ibox">
+
+                <div class="ibox-title" style="text-align: right;">
+                    <button type="button" class="btn btn-info m-r-sm" ng-click="showLeftPanel=false"><<</button>
+                </div>
+
+                <div class="ibox-content pharmacy-view">
+                    <div class="row pharmacy-section">
+                        <div class="col">
+                            <div class="item item-thumbnail-left" style="margin-bottom: 2px;">
+                                <img ng-src="{{photo}}">
+                                <div style="position: absolute; top: 95px; left: 130px;">
+                                    <a href="tel: {{phone}}" class="btn btn-success btn-rounded"><i class="fa fa-phone"></i> {{phone}}</a>
+                                </div>
+                            </div>
+                            <div class="pharmacy-title">
+                                <div class="title">{{name}}</div>
+                                <div class="address">{{distrito}} {{canton}}, {{provincia}}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-section">
+                        <div class="col">
+                            <div class="schedule-title">
+                                <h4>Schedule</h4>
+                            </div>
+
+                            <div class="row schedule-row">
+                                <div class="col schedule-col" style="float:left;" ng-repeat="day in schedule track by $index">
+                                    <span class="day">{{dayOfWeek[$index]}}:</span><span>{{day.startTime}} - {{day.closeTime}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row service-section">
+                        <div class="col">
+                            <div class="service-title">
+                                <h4>Services</h4>
+                            </div>
+
+                            <div class="row service-row">
+                                <div class="col service-col" style="float:left;" ng-repeat="service in services">
+                                    <i class="icon ion-ios-checkmark-empty"></i> {{service}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row plan-section" ng-if="activePlans.length>0">
+                        <div class="col">
+                            <div class="section-title">
+                                <h3 style="font-weight: 600;">ACTIVE PLANS</h3>
+                            </div>
+
+                            <div class="list card" ng-repeat="plan in activePlans">
+                                <div class="item item-image" ng-if="plan.photo">
+                                    <img ng-src="{{plan.photo}}" style="width: 100%;">
+                                </div>
+
+                                <div class="item text">
+                                    <h2 style="font-weight: 600;">{{plan.title}}</h2>
+                                    <p>{{plan.description}}</p>
+                                    <p>{{plan.dateInit.toLocaleString()}} - {{plan.dateEnd.toLocaleString()}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row promotion-section" ng-if="activePromotions.length>0">
+                        <div class="col">
+                            <div class="section-title">
+                                <h3 style="font-weight: 600;">ACTIVE PROMOTIONS</h3>
+                            </div>
+
+                            <div class="list card" ng-repeat="promotion in activePromotions">
+                                <div class="item item-image" ng-if="promotion.photo">
+                                    <img ng-src="{{promotion.photo}}" style="width: 100%;">
+                                </div>
+
+                                <div class="item text">
+                                    <h2 style="font-weight: 600;">{{promotion.title}}</h2>
+                                    <p>{{promotion.description}}</p>
+                                    <p>{{promotion.dateInit.toLocaleString()}} - {{promotion.dateEnd.toLocaleString()}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+

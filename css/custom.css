@@ -1,0 +1,208 @@
+body, html {
+    height: 100%;
+    min-width: 500px;
+}
+
+#page-wrapper.map {
+    padding: 0px;
+}
+
+#page-wrapper.promotion {
+    padding: 0px;
+}
+
+#page-wrapper.news {
+    padding: 0px;
+}
+
+.main-view {
+    height: calc(100% - 100px);
+}
+
+.map, .promotion, .news {
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+@media (min-width: 768px) {
+
+    #page-wrapper {
+        margin: 0 0 0 0px;
+    }
+}
+
+.google-map {
+    width: 100%;
+    height: 100%;
+}
+
+.info-window {
+    margin-top: 20px;
+}
+
+.info-window .photo {
+    width: 60px;
+    height: 60px;
+}
+.info-window .photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.info-window .name {
+    position: absolute;
+    top: 20px;
+    left: 70px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.info-window .address {
+    display: block;
+    color: #666;
+}
+
+.info-window .address p {
+    margin: 10px 0;
+}
+
+.info-window .address .bold {
+    font-weight: 900;
+}
+
+.info-window .detail {
+    float: right;
+}
+
+/* Pharmacy view */
+.pharmacy-view .row, .pharmacy-view .col {
+    padding: 0; }
+
+.pharmacy-view .pharmacy-section {
+    background-color: #fff; }
+.pharmacy-view .pharmacy-section .item {
+    text-align: left; }
+.pharmacy-view .pharmacy-section .item img {
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    max-height: 100px; }
+.pharmacy-view .pharmacy-section .item .button {
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 20px; }
+.pharmacy-view .pharmacy-section .pharmacy-title {
+    background-color: #38ACE2;
+    padding: 10px; }
+.pharmacy-view .pharmacy-section .pharmacy-title .title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500; }
+.pharmacy-view .pharmacy-section .pharmacy-title .address {
+    color: #fff;
+    font-size: 14px; }
+
+.pharmacy-view .schedule-section {
+    padding: 10px; }
+.pharmacy-view .schedule-section .schedule-title h4 {
+    color: #38ACE2; }
+.pharmacy-view .schedule-section .row.schedule-row {
+    flex-wrap: wrap; }
+.pharmacy-view .schedule-section .col.schedule-col {
+    flex: none;
+    width: 50%;
+    padding-left: 20px;
+    color: #38ACE2;
+    font-weight: 500; }
+.pharmacy-view .schedule-section .day {
+    display: inline-block;
+    width: 40px; }
+
+.pharmacy-view .service-section {
+    padding: 10px; }
+.pharmacy-view .service-section .service-title h4 {
+    color: #009689; }
+.pharmacy-view .service-section .row.service-row {
+    flex-wrap: wrap; }
+.pharmacy-view .service-section .col.service-col {
+    flex: none;
+    width: 50%;
+    padding-left: 20px;
+    color: #009689;
+    font-weight: 500; }
+
+.pharmacy-view .plan-section {
+    padding-top: 10px;
+    paddng-bottom: 10px; }
+.pharmacy-view .plan-section .section-title {
+    background-color: #38ACE2;
+    padding: 10px;
+    text-align: center; }
+.pharmacy-view .plan-section .section-title h3 {
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 0px; }
+.pharmacy-view .plan-section .card {
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+.pharmacy-view .plan-section .card .item.text {
+    background-color: #EBEBEB; }
+.pharmacy-view .plan-section .card .item.text h2 {
+    color: #38ACE2;
+    font-size: 20px; }
+
+.pharmacy-view .promotion-section {
+    padding-top: 10px;
+    paddng-bottom: 10px; }
+.pharmacy-view .promotion-section .section-title {
+    background-color: #38ACE2;
+    padding: 10px;
+    text-align: center; }
+.pharmacy-view .promotion-section .section-title h3 {
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 0px; }
+.pharmacy-view .promotion-section .card {
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+.pharmacy-view .promotion-section .card .item.text {
+    background-color: #EBEBEB; }
+.pharmacy-view .promotion-section .card .item.text h2 {
+    color: #38ACE2;
+    font-size: 20px; }
+
+
+/* Promotion view */
+.promotion-view {
+    background-color: #38ACE2;
+}
+.promotion-view .card {
+    background-color: #38ACE2;
+    box-shadow: none;
+    padding-bottom: 28px; }
+.promotion-view .item.item-image {
+    background-color: #38ACE2; }
+.promotion-view .item.text {
+     }
+.promotion-view .item h2 {
+    color: #38ACE2;
+    font-size: 20px; }
+.promotion-view .navigation {
+    position: absolute;
+    width: 100%;
+    height: 62px;
+    margin-top: -44px;
+    z-index: 11 !important;
+    text-align: center; }
+.promotion-view .navigation p {
+    margin-bottom: 0px;
+    font-size: 11px;
+    line-height: 15px;
+    color: #F4BB2C; }
+.promotion-view .navigation .button {
+    position: relative; }
